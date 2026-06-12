@@ -1,0 +1,27 @@
+---
+const tiers = [
+  { name: 'Subscription', price: '€50', period: '/month', description: 'For companies providing or consuming metric records using MR3.' },
+  { name: 'Patron', price: '€100', period: '/month', description: 'For organizations that want to actively support the mission of Metricsrouter.' },
+  { name: 'Ambassador', price: '€500', period: '/month', description: 'For organizations leading the way in open metrics and economic collaboration.' },
+];
+---
+
+<section class="py-20 lg:py-28 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="fade-in mb-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0D5F52] mb-4">The Revenues</p>
+      <p class="text-gray-600 leading-relaxed max-w-2xl">
+        MetricsRouter will finance its operations by charging a monthly subscription to each company that either provides or consumes metric records using MR3. Monthly contributions will be reduced when long-term profitability goals are reached and financial buffers are full.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      {tiers.map((tier, i) => (
+        <div class={`fade-in rounded-2xl p-8 border ${i === 2 ? 'border-[#0D5F52] bg-[#E6F4F1]' : 'border-gray-200 bg-white'}`}>
+          <p class="text-sm font-semibold text-gray-500 mb-2">{tier.name}</p>
+          <p class="text-4xl font-bold text-gray-900 mb-1">{tier.price}<span class="text-base font-normal text-gray-400">{tier.period}</span></p>
+          <p class="text-sm text-gray-600 mt-4 leading-relaxed">{tier.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

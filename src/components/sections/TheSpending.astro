@@ -1,0 +1,39 @@
+---
+const centers = [
+  { name: 'Research & Development', pct: '36%' },
+  { name: 'User Support', pct: '15%' },
+  { name: 'Dev-Ops', pct: '10%' },
+  { name: 'Hosting & Licensing', pct: '5%' },
+  { name: 'Service Evangelism', pct: '5%' },
+  { name: 'Work Environment', pct: '5%' },
+  { name: 'Governance', pct: '5%' },
+  { name: 'Human Support', pct: '3%' },
+  { name: 'Education', pct: '3%' },
+  { name: 'Accounting & Finance', pct: '2%' },
+  { name: 'Celebrations', pct: '1%' },
+];
+---
+
+<section class="py-20 lg:py-28 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div class="fade-in">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0D5F52] mb-4">The Spending</p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          The spending of the company will be allocated using a revenue based normation method. Every year the spending-center-leaders and company leaders will decide how to re-allocate the spending within the 90% of Net-Revenue norm, which leaves 10% for Earnings-before-Tax.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Employees will be given compensation that is conform compensation medians for roles similar to that of the people in their respective region.
+        </p>
+      </div>
+      <div class="fade-in space-y-3">
+        {centers.map((c) => (
+          <div class="flex items-center justify-between py-2 border-b border-gray-100">
+            <span class="text-sm text-gray-700">{c.name}</span>
+            <span class="text-sm font-semibold text-[#0D5F52]">{c.pct}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

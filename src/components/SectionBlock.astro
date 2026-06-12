@@ -1,0 +1,37 @@
+---
+interface Props {
+  label: string;
+  paragraphs: string[];
+  image?: string;
+  imageAlt?: string;
+  imageLeft?: boolean;
+  id?: string;
+}
+
+const { label, paragraphs, image, imageAlt = '', imageLeft = false, id } = Astro.props;
+---
+
+<section id={id} class="py-20 lg:py-28 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class={`grid gap-12 lg:gap-20 items-center ${image ? 'lg:grid-cols-2' : 'max-w-3xl'} ${image && imageLeft ? 'lg:[&>*:first-child]:order-last' : ''}`}>
+      <div class="fade-in">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0D5F52] mb-4">{label}</p>
+        <slot name="heading" />
+        <div class="space-y-4 text-gray-600 leading-relaxed text-[1.0625rem]">
+          {paragraphs.map((p) => <p set:html={p} />)}
+        </div>
+        <slot name="extra" />
+      </div>
+      {image && (
+        <div class="fade-in">
+          <img
+            src={image}
+            alt={imageAlt}
+            class="w-full rounded-2xl shadow-lg ring-1 ring-gray-200 object-cover"
+            loading="lazy"
+          />
+        </div>
+      )}
+    </div>
+  </div>
+</section>

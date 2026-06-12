@@ -1,0 +1,30 @@
+---
+const disciplines = [
+  'Theology', 'Ethics', 'Ecology', 'Physics', 'Chemistry',
+  'Medicine', 'Psychology', 'Law', 'Accounting', 'Architecture',
+];
+---
+
+<section class="py-20 lg:py-28 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div class="fade-in">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0D5F52] mb-4">The Governance</p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          The company will be incorporated as a "Rentmeester Vennootschap" (Steward Owned Limited Liability Company) under Dutch law. In the statutory notes a clear mission will be formulated that properly scopes the goal and purpose of Metricsrouter.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          The RV will be governed by 15 stewards — 5 internal and 10 external — with each a single vote.
+        </p>
+      </div>
+      <div class="fade-in">
+        <p class="text-sm font-semibold text-gray-900 mb-4">10 External Steward Disciplines</p>
+        <div class="flex flex-wrap gap-2">
+          {disciplines.map((d) => (
+            <span class="text-sm bg-[#E6F4F1] text-[#0D5F52] font-medium px-3 py-1 rounded-full">{d}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

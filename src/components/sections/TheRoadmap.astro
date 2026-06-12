@@ -1,0 +1,51 @@
+---
+const tiers = [
+  {
+    name: 'MR1',
+    title: 'Peer-to-Peer Spreadsheet',
+    description: 'The first step allows all users to manually fill out their respective metrics in a spreadsheet according to a standard setup, which is then shared with external users. This setup is fully peer-to-peer and can be set up independently of the Metricsrouter service.',
+    image: '/assets/screenshot-09.png',
+  },
+  {
+    name: 'MR2',
+    title: 'Semantic API Credentials',
+    description: 'The MR2 setup allows metric suppliers to share their semantics API access credentials with specific metric consumers. These consumers can then sync with multiple metric suppliers by setting up an API connection with each of the legal entities they want to pull data from.',
+    image: '/assets/screenshot-10.png',
+  },
+  {
+    name: 'MR3',
+    title: 'Metricsrouter API',
+    description: 'In the MR3 setup, the metric consumers connect to the Metricsrouter API to pull the required metric data. The system will then check if the requested metric request is valid and the consumer has the correct rights to ask that specific question.',
+    image: '/assets/screenshot-11.png',
+  },
+  {
+    name: 'MR4',
+    title: 'Direct Connections',
+    description: 'Once all major and relevant connections have been made, the work will begin on MR4 which should allow metric consumers to directly connect to metric suppliers — similar to the currently existing Domain Name System used to visit websites.',
+    image: '/assets/screenshot-12.png',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="fade-in mb-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0D5F52] mb-4">The Roadmap</p>
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 max-w-xl">
+        Four tiers of implementation, from manual to autonomous.
+      </h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-8">
+      {tiers.map((tier) => (
+        <div class="fade-in rounded-2xl border border-gray-200 overflow-hidden">
+          <img src={tier.image} alt={tier.title} class="w-full h-48 object-cover object-top" loading="lazy" />
+          <div class="p-6">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#0D5F52] bg-[#E6F4F1] px-2 py-1 rounded mb-3">{tier.name}</span>
+            <h3 class="font-semibold text-gray-900 mb-2">{tier.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{tier.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
